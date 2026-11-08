@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_root">#121417</color>
+    <color name="bg_panel">#1C1F24</color>
+    <color name="bg_panel_alt">#20242B</color>
+    <color name="accent">#39D98A</color>
+    <color name="accent_dim">#1F7A50</color>
+    <color name="key_digit">#2A2F38</color>
+    <color name="key_digit_pressed">#3A4150</color>
+    <color name="key_control">#3A2630</color>
+    <color name="key_control_pressed">#55303D</color>
+    <color name="text_primary">#E8ECEF</color>
+    <color name="text_secondary">#8A9099</color>
+    <color name="text_on_accent">#0B120E</color>
+</resources>

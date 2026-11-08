@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_root"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="8dp">
+
+    <!-- Top bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="12dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/app_name"
+            android:textColor="@color/accent"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="monospace" />
+
+        <Button
+            android:id="@+id/btnModeToggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:background="@drawable/btn_accent_outline"
+            android:textColor="@color/accent"
+            android:textSize="12sp"
+            android:fontFamily="monospace"
+            android:textAllCaps="true" />
+    </LinearLayout>
+
+    <!-- Base selector -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="12dp">
+
+        <Button
+            android:id="@+id/btnBaseHex"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="6dp"
+            android:minHeight="0dp"
+            android:background="@drawable/btn_accent_filled"
+            android:text="@string/base_hex"
+            android:textColor="@color/text_on_accent"
+            android:textSize="13sp"
+            android:fontFamily="monospace"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnBaseDec"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="6dp"
+            android:minHeight="0dp"
+            android:background="@drawable/btn_accent_outline"
+            android:text="@string/base_dec"
+            android:textColor="@color/accent"
+            android:textSize="13sp"
+            android:fontFamily="monospace"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnBaseBin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="6dp"
+            android:minHeight="0dp"
+            android:background="@drawable/btn_accent_outline"
+            android:text="@string/base_bin"
+            android:textColor="@color/accent"
+            android:textSize="13sp"
+            android:fontFamily="monospace"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnBaseMorse"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minHeight="0dp"
+            android:background="@drawable/btn_accent_outline"
+            android:text="@string/base_morse"
+            android:textColor="@color/accent"
+            android:textSize="13sp"
+            android:fontFamily="monospace"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Input panel -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_panel"
+        android:padding="12dp"
+        android:layout_marginBottom="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="4dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/label_input"
+                android:textColor="@color/text_secondary"
+                android:textSize="11sp"
+                android:fontFamily="monospace" />
+
+            <Button
+                android:id="@+id/btnMorseAutoGuess"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:background="@drawable/btn_accent_outline"
+                android:textColor="@color/accent"
+                android:textSize="10sp"
+                android:fontFamily="monospace"
+                android:textAllCaps="true" />
+        </LinearLayout>
+
+        <HorizontalScrollView
+            android:id="@+id/baseInputScroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <TextView
+                android:id="@+id/tvInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="40dp"
+                android:gravity="center_vertical"
+                android:text="@string/hint_hex_empty"
+                android:textColor="@color/text_secondary"
+                android:textSize="20sp"
+                android:textIsSelectable="true"
+                android:fontFamily="monospace" />
+        </HorizontalScrollView>
+
+        <EditText
+            android:id="@+id/etInputText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:minHeight="40dp"
+            android:background="@null"
+            android:gravity="top"
+            android:inputType="textMultiLine|textNoSuggestions"
+            android:hint="@string/hint_text_empty"
+            android:textColorHint="@color/text_secondary"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"
+            android:fontFamily="monospace" />
+    </LinearLayout>
+
+    <!-- Output panel -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@drawable/bg_panel_alt"
+        android:padding="12dp"
+        android:layout_marginBottom="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="4dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/label_output"
+                android:textColor="@color/accent"
+                android:textSize="11sp"
+                android:fontFamily="monospace" />
+
+            <Button
+                android:id="@+id/btnCopyOutput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:background="@drawable/btn_accent_outline"
+                android:text="@string/btn_copy"
+                android:textColor="@color/accent"
+                android:textSize="11sp"
+                android:fontFamily="monospace" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tvOutput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:textIsSelectable="true"
+                android:fontFamily="monospace" />
+        </ScrollView>
+    </LinearLayout>
+
+    <!-- Hex keypad -->
+    <GridLayout
+        android:id="@+id/hexKeypad"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.6"
+        android:columnCount="4"
+        android:rowCount="4">
+
+        <Button android:id="@+id/key7" style="@style/HexKey" android:text="7" />
+        <Button android:id="@+id/key8" style="@style/HexKey" android:text="8" />
+        <Button android:id="@+id/key9" style="@style/HexKey" android:text="9" />
+        <Button android:id="@+id/keyA" style="@style/HexKeyLetter" android:text="A" />
+
+        <Button android:id="@+id/key4" style="@style/HexKey" android:text="4" />
+        <Button android:id="@+id/key5" style="@style/HexKey" android:text="5" />
+        <Button android:id="@+id/key6" style="@style/HexKey" android:text="6" />
+        <Button android:id="@+id/keyB" style="@style/HexKeyLetter" android:text="B" />
+
+        <Button android:id="@+id/key1" style="@style/HexKey" android:text="1" />
+        <Button android:id="@+id/key2" style="@style/HexKey" android:text="2" />
+        <Button android:id="@+id/key3" style="@style/HexKey" android:text="3" />
+        <Button android:id="@+id/keyC" style="@style/HexKeyLetter" android:text="C" />
+
+        <Button android:id="@+id/key0" style="@style/HexKey" android:text="0" />
+        <Button android:id="@+id/keyD" style="@style/HexKeyLetter" android:text="D" />
+        <Button android:id="@+id/keyE" style="@style/HexKeyLetter" android:text="E" />
+        <Button android:id="@+id/keyF" style="@style/HexKeyLetter" android:text="F" />
+    </GridLayout>
+
+    <!-- Decimal keypad (digits, space separates each byte value) -->
+    <GridLayout
+        android:id="@+id/decKeypad"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.6"
+        android:visibility="gone"
+        android:columnCount="3"
+        android:rowCount="4">
+
+        <Button android:id="@+id/decKey7" style="@style/HexKey" android:text="7" />
+        <Button android:id="@+id/decKey8" style="@style/HexKey" android:text="8" />
+        <Button android:id="@+id/decKey9" style="@style/HexKey" android:text="9" />
+
+        <Button android:id="@+id/decKey4" style="@style/HexKey" android:text="4" />
+        <Button android:id="@+id/decKey5" style="@style/HexKey" android:text="5" />
+        <Button android:id="@+id/decKey6" style="@style/HexKey" android:text="6" />
+
+        <Button android:id="@+id/decKey1" style="@style/HexKey" android:text="1" />
+        <Button android:id="@+id/decKey2" style="@style/HexKey" android:text="2" />
+        <Button android:id="@+id/decKey3" style="@style/HexKey" android:text="3" />
+
+        <Button android:id="@+id/decKey0" style="@style/HexKey" android:text="0" />
+        <Button
+            android:id="@+id/decKeySpace"
+            style="@style/HexKeyLetter"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="2"
+            android:text="@string/key_space" />
+    </GridLayout>
+
+    <!-- Binary keypad (raw stream of 1s and 0s) -->
+    <GridLayout
+        android:id="@+id/binKeypad"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.6"
+        android:visibility="gone"
+        android:columnCount="2"
+        android:rowCount="1">
+
+        <Button android:id="@+id/binKey0" style="@style/HexKey" android:text="0" android:textSize="28sp" />
+        <Button android:id="@+id/binKey1" style="@style/HexKey" android:text="1" android:textSize="28sp" />
+    </GridLayout>
+
+    <!-- Morse keypad (dot, dash, letter space, word break) -->
+    <GridLayout
+        android:id="@+id/morseKeypad"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.6"
+        android:visibility="gone"
+        android:columnCount="2"
+        android:rowCount="2">
+
+        <Button android:id="@+id/morseKeyDot" style="@style/HexKey" android:text="@string/key_morse_dot" android:textSize="28sp" />
+        <Button android:id="@+id/morseKeyDash" style="@style/HexKey" android:text="@string/key_morse_dash" android:textSize="28sp" />
+
+        <Button android:id="@+id/morseKeyLetterSpace" style="@style/HexKeyLetter" android:text="@string/key_letter_space" />
+        <Button android:id="@+id/morseKeyWordSpace" style="@style/HexKeyLetter" android:text="@string/key_word_space" />
+    </GridLayout>
+
+    <!-- Control row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.7"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/key_control_selector"
+            android:text="@string/btn_clear"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:fontFamily="monospace" />
+
+        <Button
+            android:id="@+id/btnBackspace"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/key_control_selector"
+            android:text="@string/btn_backspace"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"
+            android:fontFamily="monospace" />
+    </LinearLayout>
+
+</LinearLayout>

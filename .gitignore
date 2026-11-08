@@ -1,0 +1,23 @@
+# Project-local Android SDK (platform-specific binaries, ~570MB, fetched by hand - see .claude/NOTES.md)
+.android-sdk/
+
+# Build outputs
+/build/
+/app/build/
+/builds/
+
+# Gradle
+.gradle/
+
+# Kotlin
+.kotlin/
+
+# Machine-specific, regenerated per checkout
+local.properties
+
+# IDE
+.idea/
+*.iml
+
+# OS
+.DS_Store

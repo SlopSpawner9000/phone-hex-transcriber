@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Hex Transcriber</string>
+    <string name="label_input">INPUT</string>
+    <string name="label_output">OUTPUT</string>
+    <string name="btn_copy">COPY</string>
+    <string name="btn_clear">CLEAR</string>
+    <string name="btn_backspace">⌫</string>
+    <string name="hint_hex_empty">Tap keys below…</string>
+    <string name="hint_text_empty">Type text to encode…</string>
+    <string name="toast_copied">Output copied to clipboard</string>
+    <string name="base_hex">HEX</string>
+    <string name="base_dec">DEC</string>
+    <string name="base_bin">BIN</string>
+    <string name="base_morse">MORSE</string>
+    <string name="key_space">SPACE</string>
+    <string name="key_morse_dot">•</string>
+    <string name="key_morse_dash">—</string>
+    <string name="key_letter_space">SPACE</string>
+    <string name="key_word_space">WORD /</string>
+    <string name="morse_auto_guess_on">GUESS: ON</string>
+    <string name="morse_auto_guess_off">GUESS: OFF</string>
+</resources>
